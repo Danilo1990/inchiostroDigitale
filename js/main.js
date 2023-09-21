@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    if (!localStorage.getItem('alert_visto')) {
+        // Mostra l'alert
+        swal("Ehy!", "Questo è un sito web di prova creato per scopi di test e dimostrazione. Non contiene informazioni reali o funzionalità operative. Si prega di tenere presente che tutto ciò che vedrete su questo sito è simulato e non ha alcun valore effettivo. Siamo qui per mostrare le nostre capacità di sviluppo web e per illustrare alcune delle nostre competenze. Grazie per la vostra visita e comprensione.", "info");
+        // Imposta la bandiera nel localStorage per indicare che l'utente ha visto l'alert
+        localStorage.setItem('alert_visto', 'true');
+    }
     // Login
     $('#login').click(function() {
         let email = $('input[name="email"]').val();
